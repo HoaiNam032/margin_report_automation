@@ -1,0 +1,13 @@
+=============================== 
+Run at 02/01/2026 17:10:02.44 
+Current directory: D:\report_excel_python_1 
+D:\report_excel_python_1\build_margin_report.py:207: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  limit_5pct_shares = 0.05 * df["Vol-listed"].fillna(0)
+D:\report_excel_python_1\build_margin_report.py:231: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  vol_3 = df["Số lượng chứng khoán niêm yết (3)"].fillna(0)
+D:\report_excel_python_1\build_margin_report.py:315: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  ref_price = df["Reference Price"].fillna(0)
+[DW] Connecting with: mssql+pyodbc:///?odbc_connect=DRIVER%3DODBC+Driver+17+for+SQL+Server%3BSERVER%3D192.168.10.163%3BDATABASE%3DDWH-CoSo%3BUID%3Drisk%3BPWD%3DReiss%23%23%40%2322%3BTrustServerCertificate%3Dyes%3B
+TRADE_DATE dùng cho báo cáo (NGÀY MỚI NHẤT): 2026-01-02
+Da tao file tu DF: '\\DATAANALYTICS\Risk Management\Report\[RMD] Report SSC_Mid\2026-01-02\180426__RMD_SCMS_Bao cao ngay truoc 8AM 02012026.xlsx' voi sheet 'Dư nợ theo used room'
+Da tao file bao cao ngay tu DF: \\DATAANALYTICS\Risk Management\Report\[RMD] Report SSC_Mid\2026-01-02\Báo cáo ngày 2026.01.02.xlsx

@@ -1,0 +1,7 @@
+=============================== 
+Run at 14/01/2026 17:10:01.85 
+Current directory: D:\report_excel_python_1 
+[DW] Connecting with: mssql+pyodbc:///?odbc_connect=DRIVER%3DODBC+Driver+17+for+SQL+Server%3BSERVER%3D192.168.10.163%3BDATABASE%3DDWH-CoSo%3BUID%3Drisk%3BPWD%3DReiss%23%23%40%2322%3BTrustServerCertificate%3Dyes%3B
+TRADE_DATE dùng cho báo cáo (NGÀY MỚI NHẤT): 2026-01-14
+Da tao file tu DF: '\\DATAANALYTICS\Risk Management\Report\[RMD] Report SSC_Mid\2026-01-14\180426__RMD_SCMS_Bao cao ngay truoc 8AM 14012026.xlsx' voi sheet 'Dư nợ theo used room'
+Da tao file bao cao ngay tu DF: \\DATAANALYTICS\Risk Management\Report\[RMD] Report SSC_Mid\2026-01-14\Báo cáo ngày 2026.01.14.xlsx
