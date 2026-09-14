@@ -12,36 +12,15 @@ import sqlalchemy as sa
 import sys
 import urllib.parse
 import sqlalchemy as sa
-# =========================
-# 0. Kết nối Data Warehouse (SQL Server)
-# =========================
-# DW_CFG = {
-#     "user": "risk",
-#     "password": "Reiss##@#22",
-#     "server": "192.168.10.163",
-#     "database": "DWH-CoSo",
-#     "driver": "ODBC Driver 17 for SQL Server",
-# }
-# DW_DSN = "DW_RISK"
-#
-# def get_dw_engine() -> sa.Engine:
-#     conn_str = f"mssql+pyodbc:///?dsn={DW_DSN}"
-#     print("[DW] Connecting with DSN:", conn_str)
-#     engine = sa.create_engine(conn_str, pool_pre_ping=True)
-#     return engine
-#
-# import urllib.parse
-# import sqlalchemy as sa
 
 def get_dw_engine() -> sa.Engine:
-    # ⚠️ Thay SERVER=... bằng đúng chuỗi server bạn dùng khi Test ODBC
-    # ví dụ: SERVER=192.168.10.163\RISK  hoặc SERVER=192.168.10.163  hoặc SERVER=risk
+
     odbc_str = (
         "DRIVER=ODBC Driver 17 for SQL Server;"
-        "SERVER=192.168.10.163;"        # <-- copy y chang trong ODBC (nếu có \RISK thì để nguyên)
-        "DATABASE=DWH-CoSo;"
-        "UID=risk;"
-        "PWD=Reiss##@#22;"
+        "SERVER=..."
+        "DATABASE=..."
+        "UID=...;"
+        "PWD=..."
         "TrustServerCertificate=yes;"
     )
 
