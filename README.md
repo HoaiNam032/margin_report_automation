@@ -98,6 +98,39 @@ WITH special_map AS (
     )
 )
 ```
+Sau đó mapping được JOIN với các bảng Data Warehouse:
+```sql
+SELECT
+    m.ticker_code AS [Stock],
+    u.used_volume AS [Used room],
+    m.margin_max_price AS [Maximum loan price],
+    m.margin_ratio AS [MR Approved Ratio (%)]
+FROM special_map s
+
+JOIN [DWH-CoSo].[dbo].[vpr0109] AS m
+    ON m.ticker_code = s.ticker
+    AND m.room_code = s.room_code_09
+    AND CAST(m.[date] AS date) = '{trade_date}'
+
+JOIN [DWH-CoSo].[dbo].[vpr0108] AS u
+    ON u.ticker = s.ticker
+    AND u.room_code = s.room_code_08
+    AND CAST(u.[date] AS date) = '{trade_date}'
+```
+### 🛠️ Kỹ thuật SQL được sử dụng
+
+Business Logic được xử lý trực tiếp tại SQL layer, kết hợp:
+
+- `WITH` — tạo Common Table Expression (CTE).
+- `VALUES` — tạo mapping table trực tiếp trong query.
+- `JOIN` — kết hợp dữ liệu từ nhiều nguồn.
+- `ON` — xác định điều kiện mapping.
+- `CAST` — chuẩn hóa kiểu dữ liệu ngày.
+- `Date Filtering` — lọc dữ liệu theo ngày giao dịch.
+- `Room Mapping` — mapping nhiều `Room Code` giữa các bảng.
+- `Multi-source Data Extraction` — lấy dữ liệu từ nhiều bảng Data Warehouse.
+
+
 ## 🔗 JOIN dữ liệu từ nhiều nguồn
 
 Pipeline thực hiện **JOIN và mapping dữ liệu từ nhiều bảng thuộc các Data Warehouse khác nhau** để xây dựng một bộ dữ liệu thống nhất phục vụ tính toán báo cáo.
